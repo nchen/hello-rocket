@@ -6,12 +6,21 @@ using the framework [rocket](https://rocket.rs/v0.5/guide/getting-started/).
 
 ```
 cargo run
+
+curl http://localhost:8000/
+```
+
+## Build docker image
+
+```
+docker build -t hello-rocket -f Dockerfile .
+docker run -p 8000:8000 hello-rocket
 ```
 
 ## Load test
 
 ```
-k6 ./api-test.js
+k6 run ./api-test.js
 
 -- or:
 autocannon http://localhost:8000
